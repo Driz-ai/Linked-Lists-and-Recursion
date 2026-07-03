@@ -1,88 +1,109 @@
-# Lab: Linked Lists and Recursion  
-**Lab GitHub Repo**: [Linked Lists and Recursion](https://github.com/learn-co-curriculum/Linked-Lists-and-Recursion)
-
----
+# Linked Lists and Recursion Lab
 
 ## Overview
-In this lab, we’ll apply **linked lists** and **recursion** to build a small prototype for managing a list of data. Imagine a junior developer assigned to maintain a simple employee roster, where IDs are stored in a linked list. You’ve been asked to implement **recursive** functionalities such as summing IDs, reversing the list in-place, and searching for a particular ID.
 
-By focusing on **linked lists** (for dynamic insertion/deletion) and **recursion** (for elegant traversal), you’ll gain hands-on experience with node-based data structures—common in many low-level or performance-sensitive applications.
+This project demonstrates the implementation of a singly linked list using Python and recursive algorithms. The lab focuses on understanding node-based data structures while applying recursion to perform common linked list operations such as summing values, searching for data, and reversing the list.
 
----
+## Learning Objectives
 
-## Task 1: Define the Problem
+By completing this lab, you will be able to:
 
-1. **Load or create** an initial linked list of integer IDs.  
-2. **Enable recursive functionality** to:
-   - **Sum** all node data in the list.  
-   - **Reverse** the list in-place.  
-   - **Search** for a given ID.  
-3. **Present** or print the result for each operation in a user-friendly format.
+* Implement a singly linked list using Python classes.
+* Create and link nodes dynamically.
+* Insert nodes at the front and end of a linked list.
+* Use recursion to:
 
-**The Challenge**: Demonstrate your understanding of linked lists while using recursion to solve day-to-day tasks such as searching and reversing data.
+  * Calculate the sum of all node values.
+  * Search for a specific value.
+  * Reverse a linked list in place.
+* Write and run unit tests to verify functionality.
+* Use Git and GitHub to manage feature branches and pull requests.
 
----
+## Project Structure
 
-## Task 2: Determine the Design
+```text
+.
+├── linked_list.py        # Node and LinkedList class implementations
+├── test_linked_list.py   # Unit tests
+├── main.py               # Optional manual testing script
+└── README.md
+```
 
-### Linked List Structure
+## Features
 
-- **App / Main**  
-  Drive the creation and manipulation of the linked list.  
+### Linked List Operations
 
-- **Node Class**  
-  Each node stores an **integer data** and a pointer/reference to `next`.  
+* `insert_at_front(data)` – Inserts a new node at the beginning of the list (O(1)).
+* `insert_at_end(data)` – Inserts a new node at the end of the list (O(n)).
 
-- **LinkedList Class**  
-  - `head` references the first node.  
-  - Methods to **insert**, **sum**, **reverse**, and **search**.  
+### Recursive Operations
 
----
+* `recursive_sum()` – Returns the sum of all node values.
+* `recursive_search(target)` – Returns `True` if the target value exists in the list; otherwise returns `False`.
+* `recursive_reverse()` – Reverses the linked list in place using recursion.
 
-## Task 3: Develop, Test, and Refine the Code
+### Utility
 
-### Set Up
+* `display()` – Prints the contents of the linked list.
 
-#### Fork and Clone
-1. Go to the provided **GitHub repository link**.  
-2. Fork the repository to your GitHub account.  
-3. Clone the forked repository to your local machine.  
+## How to Run
 
-#### Open and Run
-1. Open the project in your preferred Python-friendly environment (VSCode, PyCharm, etc.).  
+1. Clone the repository:
 
-### Implementation Details
+```bash
+git clone <your-repository-url>
+```
 
-1. **Create a feature branch** (e.g., `feature/linked-list-lab`).  
-2. **Create the `Node` and `LinkedList` classes**:
-   - **Node** class with `data` and `next`.  
-   - **LinkedList** class to house `head` and methods.
-3. **Manage Linked List Insertion**:
-   - `insert_at_front(data)` → O(1).  
-   - *(Optional)* `insert_at_end(data)` → O(n) to traverse to the end.
-4. **Use Recursion**:
-   - **Sum**: Returns `0` if node is `None`, otherwise `node.data + recurse(node.next)`.  
-   - **Reverse**: Re-point each node’s `next` to the **previous** node until the list is reversed.  
-   - **Search**: Returns `True` if a node’s `data` matches the target; stops if it hits `None`.
-5. **Run Tests** (if provided) or manually test:
-   - Insert some sample data, then call each recursive method.  
-   - Print the list or results to confirm correctness.
-6. **Push feature branch** and open a PR on GitHub.
-7. **Merge** to `main` once reviewed.
+2. Navigate into the project directory:
 
----
+```bash
+cd Linked-Lists-and-Recursion
+```
 
-## Task 4: Document and Maintain
+3. Run the example program (optional):
 
-### Best Practice Documentation Steps
+```bash
+python main.py
+```
 
-- **Add Comments**: Clarify logic for recursion, highlight base vs. recursive cases.  
-- **Explain Intent**: Make it clear why you’re using recursion in a particular method (e.g., elegance, clarity, demonstration).  
-- **README**: Update with instructions on how to run the code, test, and interpret results.  
-- **Clean Up**:
-  - Remove any debugging prints or stale branches.  
-  - Ensure your `.gitignore` is updated to exclude unnecessary files.
+## Running the Tests
 
-## Submission
-Once the lab is complete, all tests are passing, and you've pushed the completed code to 
-your forked repo on GitHub, submit your GitHub repo through Canvas using CodeGrade.
+Execute the unit tests with:
+
+```bash
+python -m unittest
+```
+
+or
+
+```bash
+python -m unittest test_linked_list.py
+```
+
+If everything is implemented correctly, all tests should pass successfully.
+
+## Example Output
+
+```text
+Original List:
+30 -> 20 -> 10 -> 5
+
+Sum: 65
+
+Search 20: True
+Search 100: False
+
+Reversed List:
+5 -> 10 -> 20 -> 30
+```
+
+## Technologies Used
+
+* Python 3
+* unittest
+* Git
+* GitHub
+
+## Author
+
+Developed as part of the Linked Lists and Recursion Lab.
